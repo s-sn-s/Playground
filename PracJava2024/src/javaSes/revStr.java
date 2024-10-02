@@ -6,7 +6,7 @@ public class revStr {
 		// TODO Auto-generated method stub
 		
 		revStr rs = new revStr();
-//		System.out.println(rs.revMyString("ItIsMe!!"));
+		System.out.println(rs.revMyString("ItIsMe!!"));
 		System.out.println(rs.revStrWithoutCounter("ABC"));
 	}
 
@@ -31,15 +31,9 @@ public class revStr {
 		char[] revStrChr = OGstr.toCharArray();		
 		
 		while(left<right) {
-			System.out.println(revStrChr[left]);
-			System.out.println(revStrChr[right]);
-			
 			char temp = revStrChr[left];
 			revStrChr[left]=revStrChr[right];
 			revStrChr[right]=temp;
-			System.out.println(revStrChr[left]);
-			System.out.println(revStrChr[right]);
-			
 			left++;
 			right--;
 		}
