@@ -1,28 +1,22 @@
 package javaSes;
 
-import java.util.Arrays;
-
 public class revStr {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		revStr rs = new revStr();
-		String rrs = rs.revMyString("ItIsMe!!");
-		System.out.println(rrs);
+//		System.out.println(rs.revMyString("ItIsMe!!"));
+		System.out.println(rs.revStrWithoutCounter("ABC"));
 	}
 
 	private String revMyString(String myStr) {
 		
-//		System.out.println(myStr.length());
 		char[] strAry = myStr.toCharArray();
 		char[] revStrAry = new char[myStr.length()];
 		int counter = 0;
 		for(int i = myStr.length(); i>0 ;i--) {
-//			System.out.print(i + " ");
-//			System.out.print(strAry[i-1]);
 			revStrAry[counter]=strAry[i-1];
-//			System.out.println(revStrAry[counter]);
 			counter++;
 		}
 		
@@ -30,4 +24,26 @@ public class revStr {
 		return myRevStr;
 	}
 	
+	private String revStrWithoutCounter(String OGstr) {
+		
+		int right = OGstr.length()-1;
+		int left = 0;
+		char[] revStrChr = OGstr.toCharArray();		
+		
+		while(left<right) {
+			System.out.println(revStrChr[left]);
+			System.out.println(revStrChr[right]);
+			
+			char temp = revStrChr[left];
+			revStrChr[left]=revStrChr[right];
+			revStrChr[right]=temp;
+			System.out.println(revStrChr[left]);
+			System.out.println(revStrChr[right]);
+			
+			left++;
+			right--;
+		}
+		
+		return new String(revStrChr);
+	}
 }
