@@ -1,13 +1,16 @@
 package javaSes;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 public class revStr {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		revStr rs = new revStr();
-		System.out.println(rs.revMyString("ItIsMe!!"));
-		System.out.println(rs.revStrWithoutCounter("ABC"));
+//		System.out.println(rs.revMyString("ItIsMe!!"));
+//		System.out.println(rs.revStrWithoutCounter("ABC"));
+		System.out.println(rs.revIt("SAVIN"));
 	}
 
 	private String revMyString(String myStr) {
@@ -39,5 +42,18 @@ public class revStr {
 		}
 		
 		return new String(revStrChr);
+	}
+	
+	private String revIt(String ogStr) {
+		char[] chrAr = ogStr.toCharArray();
+		int strLen = ogStr.length();
+		char[] rvChrAr =  new char[strLen];
+		int counter = 0;
+		for(int i = strLen-1; i >= 0 ; i--) {
+			rvChrAr[counter] = chrAr[i];
+			counter++;
+		}
+		String rvStr = new String(rvChrAr);
+		return rvStr;
 	}
 }
