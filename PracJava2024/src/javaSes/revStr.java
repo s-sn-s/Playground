@@ -10,7 +10,8 @@ public class revStr {
 		revStr rs = new revStr();
 //		System.out.println(rs.revMyString("ItIsMe!!"));
 //		System.out.println(rs.revStrWithoutCounter("ABC"));
-		System.out.println(rs.revIt("SAVIN"));
+//		System.out.println(rs.revIt("SAVIN"));
+		System.out.println(rs.revMeUp("SAVIN"));
 	}
 
 	private String revMyString(String myStr) {
@@ -55,5 +56,21 @@ public class revStr {
 		}
 		String rvStr = new String(rvChrAr);
 		return rvStr;
+	}
+	
+	private String revMeUp(String ogSTR) {
+		int strSize = ogSTR.length();
+		int counter = 0;
+		char[] ogChrAry = ogSTR.toCharArray();
+		char[] rvChrAry = new char[strSize];
+		
+		for(int i = strSize-1; i>=0;i--) {
+			rvChrAry[counter]=ogChrAry[i];
+			counter++;
+		}
+		
+		String rvSTR = new String(rvChrAry);
+		
+		return rvSTR;
 	}
 }
