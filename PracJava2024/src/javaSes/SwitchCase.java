@@ -6,7 +6,7 @@ public class SwitchCase {
 		
 		SwitchCase sc = new SwitchCase();
 		char switchMe = 's';
-		
+		sc.switcher(1);
 		if(sc.checkMyState(switchMe)) {
 
         switch(switchMe){
@@ -41,4 +41,19 @@ public class SwitchCase {
 		}		
 	}
 
+	private String switcher(int bool) {
+		
+		switch(bool){
+			case 1:
+				System.out.println("true");
+				break;
+			case 0:
+				System.out.println("false");
+				break;
+			default:
+				System.out.println("boolean missing");
+		}
+		
+		return "as";
+	}
 }
