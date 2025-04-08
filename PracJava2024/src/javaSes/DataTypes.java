@@ -22,6 +22,10 @@ public class DataTypes {
 		
 		char t = ' ';
 		
+		//infinity
+		System.out.println(1/0.0);
+		//NaN
+		System.out.println(0.0/0.0);
 		
 	}
 
