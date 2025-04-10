@@ -7,12 +7,31 @@ public class revStr {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		String reverseMe = "1 2 3 4 5 6 7 8 9";
+		String breaker = "----------------------";
+		
 		revStr rs = new revStr();
-//		System.out.println(rs.revMyString("ItIsMe!!"));
-//		System.out.println(rs.revStrWithoutCounter("ABC"));
-//		System.out.println(rs.revIt("SAVIN"));
-//		System.out.println(rs.revMeUp("SAVIN"));
-		System.out.println(rs.revrev("ABCD"));
+
+		System.out.println(breaker);
+		System.out.println(rs.revMyString(reverseMe));
+		
+		System.out.println(breaker);
+		System.out.println(rs.revrev(reverseMe));
+		
+		System.out.println(breaker);
+		System.out.println(rs.revStrWithoutCounter(reverseMe));
+		
+		System.out.println(breaker);
+		System.out.println(rs.revIt(reverseMe));
+		
+		System.out.println(breaker);
+		System.out.println(rs.revMeUp(reverseMe));
+		
+		System.out.println(breaker);
+		System.out.println(rs.revrev(reverseMe));
+		
+		System.out.println(breaker);
+		System.out.println(rs.revEnFor(reverseMe));
 	}
 
 	private String revMyString(String myStr) {
@@ -83,13 +102,28 @@ public class revStr {
 		int counter = 0; 
 		
 		for(int i=originalStringLength-1;i>=0;i--) {
-			System.out.print(counter + " ");
-			System.out.print(i+ " ");
-			System.out.print(ogChAr[i]+ " ");
+//			System.out.print(counter + " ");
+//			System.out.print(i+ " ");
+//			System.out.print(ogChAr[i]+ " ");
 			rvChAr[counter]=ogChAr[i];
-			System.out.print(rvChAr[counter]);
-			System.out.println();
+//			System.out.print(rvChAr[counter]);
+//			System.out.println();
 			counter++;
+		}
+		
+		String rvS = new String(rvChAr); 
+		
+		return rvS;
+	} 
+	
+private String revEnFor(String ogS) {
+		
+		char[] ogChAr =  ogS.toCharArray();
+		int originalStringLength = ogS.length();
+		char[] rvChAr= new char[originalStringLength];
+		
+		for(char c : ogChAr) {
+			rvChAr[--originalStringLength] = c;
 		}
 		
 		String rvS = new String(rvChAr); 
