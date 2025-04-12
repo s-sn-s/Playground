@@ -32,6 +32,9 @@ public class revStr {
 		
 		System.out.println(breaker);
 		System.out.println(rs.revEnFor(reverseMe));
+		
+		System.out.println(breaker);
+		System.out.println(rs.revOnlyStr(reverseMe));
 	}
 
 	private String revMyString(String myStr) {
@@ -116,7 +119,7 @@ public class revStr {
 		return rvS;
 	} 
 	
-private String revEnFor(String ogS) {
+	private String revEnFor(String ogS) {
 		
 		char[] ogChAr =  ogS.toCharArray();
 		int originalStringLength = ogS.length();
@@ -130,4 +133,16 @@ private String revEnFor(String ogS) {
 		
 		return rvS;
 	} 
+	
+	private String revOnlyStr(String ogS) {
+		
+		int slength = ogS.length();
+		String rvS = "";
+		
+		for(int i = slength-1; i >= 0;--i) {
+			rvS = rvS + ogS.charAt(i);
+		}
+				
+		return rvS;
+	}
 }
