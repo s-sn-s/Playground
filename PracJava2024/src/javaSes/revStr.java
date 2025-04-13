@@ -12,29 +12,33 @@ public class revStr {
 		
 		revStr rs = new revStr();
 
+//		System.out.println(breaker);
+//		System.out.println(rs.revMyString(reverseMe));
+//		
+//		System.out.println(breaker);
+//		System.out.println(rs.revrev(reverseMe));
+//		
+//		System.out.println(breaker);
+//		System.out.println(rs.revStrWithoutCounter(reverseMe));
+//		
+//		System.out.println(breaker);
+//		System.out.println(rs.revIt(reverseMe));
+//		
+//		System.out.println(breaker);
+//		System.out.println(rs.revMeUp(reverseMe));
+//		
+//		System.out.println(breaker);
+//		System.out.println(rs.revrev(reverseMe));
+//		
+//		System.out.println(breaker);
+//		System.out.println(rs.revEnFor(reverseMe));
+//		
+//		System.out.println(breaker);
+//		System.out.println(rs.revOnlyStr(reverseMe));
+//		
 		System.out.println(breaker);
-		System.out.println(rs.revMyString(reverseMe));
+		System.out.println(rs.revMeWithStr(reverseMe));
 		
-		System.out.println(breaker);
-		System.out.println(rs.revrev(reverseMe));
-		
-		System.out.println(breaker);
-		System.out.println(rs.revStrWithoutCounter(reverseMe));
-		
-		System.out.println(breaker);
-		System.out.println(rs.revIt(reverseMe));
-		
-		System.out.println(breaker);
-		System.out.println(rs.revMeUp(reverseMe));
-		
-		System.out.println(breaker);
-		System.out.println(rs.revrev(reverseMe));
-		
-		System.out.println(breaker);
-		System.out.println(rs.revEnFor(reverseMe));
-		
-		System.out.println(breaker);
-		System.out.println(rs.revOnlyStr(reverseMe));
 	}
 
 	private String revMyString(String myStr) {
@@ -143,6 +147,16 @@ public class revStr {
 			rvS = rvS + ogS.charAt(i);
 		}
 				
+		return rvS;
+	}
+	
+	private String revMeWithStr(String ogS) {
+		
+		int sLength = ogS.length();
+		String rvS = "";
+		for(int i = sLength-1; i>=0; i--) {
+			rvS = rvS + ogS.charAt(i);
+		}
 		return rvS;
 	}
 }
