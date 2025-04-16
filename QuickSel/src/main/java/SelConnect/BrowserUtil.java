@@ -18,38 +18,48 @@ public class BrowserUtil {
 		System.out.println(d.findElement(By.tagName("h1")).getText());
 		
 		d.navigate().to("https://google.com");
-		String myGoogleTitle = d.getTitle();
 		
+//		String myGoogleTitle = d.getTitle();
 //		if(myGoogleTitle.equals(d.getTitle())) {
 //			new RuntimeException("not redirected");
 //		}
 //		d.navigate().forward();
 //		d.navigate().forward();
 //		d.navigate().refresh();
+		
 		d.get("https://www.irctc.co.in/nget/train-search");
+//		
 //		d.wait(5000);
 //		d.switchTo().alert().dismiss();
+		Thread.sleep(3000);
 		
+		By promo = By.xpath("//a[contains(text(),'PROMOTIONS')]");
 		
-//		By promo = By.xpath("//a[conatins(text(),'PROMOTIONS')]");
+		By more = By.cssSelector("li.menu-list:last-child");
 		
-		By promo = By.cssSelector("li.menu-list:last-child");
-		
-		///html/body/app-root/app-home/div[1]/app-header/div[2]/div[2]/div[2]/nav/ul/li[11]/a
+		/*
+		//html/body/app-root/app-home/div[1]/app-header/div[2]/div[2]/div[2]/nav/ul/li[11]/a
+		*/
 		
 		WebElement moreLink = d.findElement(promo);
+		WebElement promoLink = d.findElement(more);
 		
-		boolean enabled = moreLink.isEnabled();
-		boolean displayed = moreLink.isDisplayed();
+		boolean enabledM = moreLink.isEnabled();
+		boolean displayedM = moreLink.isDisplayed();
+		boolean enabledP = moreLink.isEnabled();
+		boolean displayedP = moreLink.isDisplayed();
 		
-		System.out.println(enabled);
-		System.out.println(displayed);
-		moreLink.click();
 		Actions act = new Actions(d);
 		
-		if (enabled && displayed) {
-			act.moveToElement(moreLink).build();
-			
+		if (enabledP && displayedP) {
+			System.out.println("Promo link is enabled : "+enabledP);
+			System.out.println("Promo link is displayed : "+displayedP);
+			act.moveToElement(promoLink).build().perform();			
+		}
+		if (enabledM && displayedM) {
+			System.out.println("More link is enabled : "+enabledM);
+			System.out.println("More link is displayed : "+displayedM);
+			moreLink.click();
 		}
 		
 		Thread.sleep(10000);
