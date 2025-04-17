@@ -1,7 +1,5 @@
 package SelConnect;
 
-import java.util.Iterator;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,9 +18,16 @@ public class BrowserUtil {
 		WebDriver d = new ChromeDriver();
 		d.manage().window().maximize();
 		System.out.println("Session id init'ed : " + ((RemoteWebDriver)d).getSessionId());
+		
+		d.get("https://the-internet.herokuapp.com");
+		
 		MultiWInHand mWh = new MultiWInHand(d);
 		
-		String[] titleArr = mWh.getUrlTitles(3, irctc, goog, mySiteUrl);
+		String parentTab = d.getWindowHandle();
+		
+		System.out.println("Parent handle : " + parentTab);
+		
+		String[] titleArr = mWh.getUrlTitles(parentTab, 3, irctc, goog, mySiteUrl);
 		
 		for(String s : titleArr) {
 			System.out.println(s);
@@ -72,13 +77,13 @@ public class BrowserUtil {
 		Actions act = new Actions(d);
 		
 		if (enabledP && displayedP) {
-			System.out.println("Promo link is enabled : "+enabledP);
-			System.out.println("Promo link is displayed : "+displayedP);
+//			System.out.println("Promo link is enabled : "+enabledP);
+//			System.out.println("Promo link is displayed : "+displayedP);
 			act.moveToElement(promoLink).build().perform();			
 		}
 		if (enabledM && displayedM) {
-			System.out.println("More link is enabled : "+enabledM);
-			System.out.println("More link is displayed : "+displayedM);
+//			System.out.println("More link is enabled : "+enabledM);
+//			System.out.println("More link is displayed : "+displayedM);
 			moreLink.click();
 		}
 		
