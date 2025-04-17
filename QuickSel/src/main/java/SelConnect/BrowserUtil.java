@@ -1,23 +1,41 @@
 package SelConnect;
 
+import java.util.Iterator;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserUtil {
 
 	public static void main(String[] args) throws InterruptedException {
 	
+		String irctc ="https://www.irctc.co.in/nget/train-search";
+		String goog ="https://google.com";
+		String mySiteUrl = "https://savinshetty.com";
+		
 		WebDriver d = new ChromeDriver();
 		d.manage().window().maximize();
-		d.navigate().to("https://savinshetty.com");
+		System.out.println("Session id init'ed : " + ((RemoteWebDriver)d).getSessionId());
+		MultiWInHand mWh = new MultiWInHand(d);
+		
+		String[] titleArr = mWh.getUrlTitles(3, irctc, goog, mySiteUrl);
+		
+		for(String s : titleArr) {
+			System.out.println(s);
+		}
+		
+		System.out.println("====================");
+		
+		d.navigate().to(mySiteUrl);
 		String mySite = d.getTitle();
 		System.out.println("My site title " + mySite);
 		System.out.println(d.findElement(By.tagName("h1")).getText());
 		
-		d.navigate().to("https://google.com");
+		d.navigate().to(goog);
 		
 //		String myGoogleTitle = d.getTitle();
 //		if(myGoogleTitle.equals(d.getTitle())) {
@@ -27,7 +45,9 @@ public class BrowserUtil {
 //		d.navigate().forward();
 //		d.navigate().refresh();
 		
-		d.get("https://www.irctc.co.in/nget/train-search");
+		 
+		
+		d.get(irctc);
 //		
 //		d.wait(5000);
 //		d.switchTo().alert().dismiss();
