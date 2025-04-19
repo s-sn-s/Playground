@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class MultiWInHand {
 
-	WebDriver driver;	
+	private WebDriver driver;	
 	public MultiWInHand(WebDriver driver) {
 		this.driver = driver;
 	}

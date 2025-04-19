@@ -16,6 +16,7 @@ public class BrowserUtil {
 		String mySiteUrl = "https://savinshetty.com";
 		
 		WebDriver d = new ChromeDriver();
+		WaitForMe.setSysWait(d, 5);
 		d.manage().window().maximize();
 		System.out.println("Session id init'ed : " + ((RemoteWebDriver)d).getSessionId());
 		
@@ -44,7 +45,7 @@ public class BrowserUtil {
 		
 //		String myGoogleTitle = d.getTitle();
 //		if(myGoogleTitle.equals(d.getTitle())) {
-//			new RuntimeException("not redirected");
+//			throw new RuntimeException("not redirected");
 //		}
 //		d.navigate().forward();
 //		d.navigate().forward();
@@ -53,10 +54,10 @@ public class BrowserUtil {
 		 
 		
 		d.get(irctc);
-//		
+		
 //		d.wait(5000);
 //		d.switchTo().alert().dismiss();
-		Thread.sleep(3000);
+//		Thread.sleep(3000);
 		
 		By promo = By.xpath("//a[contains(text(),'PROMOTIONS')]");
 		
@@ -87,7 +88,7 @@ public class BrowserUtil {
 			moreLink.click();
 		}
 		
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 		
 		d.quit();
 	
