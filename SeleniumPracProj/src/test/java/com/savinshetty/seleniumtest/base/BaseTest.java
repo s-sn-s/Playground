@@ -6,12 +6,13 @@ import org.testng.annotations.BeforeTest;
 
 import com.savinshetty.seleniumtest.factory.DriverFactory;
 import com.savinshetty.seleniumtest.pages.LoginPage;
-import com.savinshetty.seleniumtest.test.LoginPageTest;
+import com.savinshetty.seleniumtest.pages.RegisterAccountPage;
 
 public class BaseTest {
 
 	protected WebDriver driver;
 	protected LoginPage loginPage;
+	protected RegisterAccountPage registerAccountPage;
 	
 	@BeforeTest
 	public void setup() {
