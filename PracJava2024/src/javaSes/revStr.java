@@ -159,4 +159,15 @@ public class revStr {
 		}
 		return rvS;
 	}
+	
+	private String revRevMe(String ogS) {
+		
+		String revStr = "";
+		
+		for(int i = ogS.length()-1; i<=0; i--) {
+			revStr = revStr + ogS.charAt(i);
+		}
+		
+		return revStr;
+	}
 }
