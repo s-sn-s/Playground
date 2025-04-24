@@ -170,4 +170,15 @@ public class revStr {
 		
 		return revStr;
 	}
+	
+	private String revMyStr(String ogStr) {
+		
+		String rvStr = "";
+		
+		for(int i = ogStr.length()-1;i>=0;i--) {
+			rvStr = rvStr + ogStr.charAt(i);
+		}
+		
+		return rvStr;
+	}
 }
