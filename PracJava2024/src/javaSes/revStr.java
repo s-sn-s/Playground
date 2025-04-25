@@ -173,6 +173,14 @@ public class revStr {
 	
 	private String revMyStr(String ogStr) {
 		
+		if(ogStr == "") {
+			return "Please pass atleast one string";
+		}
+		
+		if(ogStr.length()==1) {
+			return ogStr;
+		}
+		
 		String rvStr = "";
 		
 		for(int i = ogStr.length()-1;i>=0;i--) {
