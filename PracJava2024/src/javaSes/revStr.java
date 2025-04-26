@@ -65,7 +65,7 @@ public class revStr {
 			char temp = revStrChr[left];
 			revStrChr[left]=revStrChr[right];
 			revStrChr[right]=temp;
-			left++;
+			left++; 
 			right--;
 		}
 		
