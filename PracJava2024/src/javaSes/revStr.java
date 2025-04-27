@@ -77,8 +77,8 @@ public class revStr {
 		int strLen = ogStr.length();
 		char[] rvChrAr =  new char[strLen];
 		int counter = 0;
-		for(int i = strLen-1; i >= 0 ; i--) {
-			rvChrAr[counter] = chrAr[i];
+		for(int counters = strLen-1; counters >= 0 ; counters--) {
+			rvChrAr[counter] = chrAr[counters];
 			counter++;
 		}
 		String rvStr = new String(rvChrAr);
