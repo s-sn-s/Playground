@@ -182,7 +182,7 @@ public class revStr {
 			return ogStr;
 		}
 		
-		String rvStr = "";
+		String rvStr = " ";
 		
 		for(int i = ogStr.length()-1;i>=0;i--) {
 			rvStr = rvStr + ogStr.charAt(i);
