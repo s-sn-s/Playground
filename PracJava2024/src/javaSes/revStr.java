@@ -175,7 +175,7 @@ public class revStr {
 		
 		
 		if(ogStr == "") {
-			return "Please pass atleast one string";
+			return "Please pass atleast one string!";
 		}
 		
 		if(ogStr.length()==1) {
