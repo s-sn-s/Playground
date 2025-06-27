@@ -8,7 +8,7 @@ public class revStr {
 		// TODO Auto-generated method stub
 		
 		String reverseMe = "1 2 3 4 5 6 7 8 9";
-		String breaker = "----------------------";
+		String breaker = "--------------------";
 		
 		revStr rs = new revStr();
 
@@ -175,6 +175,7 @@ public class revStr {
 		
 		
 		if(ogStr == "") {
+			System.out.println("Hello world");
 			return "Please pass atleast one string!";
 		}
 		
