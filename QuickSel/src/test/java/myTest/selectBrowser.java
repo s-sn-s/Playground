@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class selectBrowser {
 
-	final static String CONFIG_FILE_PATH = "./src/test/java/myTest/selectBrowser.java";
+	final static String CONFIG_FILE_PATH = "./src/test/java/myTest/config.properties";
 	
 	public static void main(String[] params) {
 		Properties prop = null;
