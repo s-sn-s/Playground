@@ -14,10 +14,20 @@ public class elementUtil {
 		this.driver = driver;
 	}
 
+	/**
+	 * 
+	 * @param eleBy
+	 * @param text
+	 */
 	public void doSendKeys(By eleBy, String text) {
 		searchElement(eleBy).sendKeys(text);
 	}
 
+	/**
+	 * 
+	 * @param ele
+	 * @return
+	 */
 	public WebElement searchElement(By ele) {
 		return driver.findElement(ele);
 	}
@@ -34,20 +44,20 @@ public class elementUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public int numberOfElementsDisplayedFromList(List<WebElement> list) {
-		if(list.size()==0) {
+		if (list.size() == 0) {
 			throw new RuntimeException("Empty list!");
 		}
-		
+
 		int displayCount = 0;
-		
-		for(WebElement ele : list) {
-			if(ele.isDisplayed()) {
+
+		for (WebElement ele : list) {
+			if (ele.isDisplayed()) {
 				displayCount++;
 			}
 		}
-		
+
 		return displayCount;
 	}
 
