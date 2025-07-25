@@ -5,7 +5,9 @@
     <classes>
       <class name="myTest.MyTestngTest">
         <methods>
+          <include name="breakDownTest"/>
           <include name="aE"/>
+          <include name="initTest"/>
         </methods>
       </class> <!-- myTest.MyTestngTest -->
     </classes>
