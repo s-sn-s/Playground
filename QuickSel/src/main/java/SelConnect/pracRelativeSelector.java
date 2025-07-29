@@ -1,6 +1,7 @@
 package SelConnect;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,18 +22,18 @@ public class pracRelativeSelector {
 		try {
 			driver = new ChromeDriver();
 			driver.get("https://selectorshub.com/xpath-practice-page/");
-
+			driver.manage().window().fullscreen();
 			
 			try {
-//			doClickCheckBox("John Smith");
-//				Thread.sleep(1000);
-			doClickCheckBox("Joe Root");
+			doClickCheckBox("John Smith");
 				Thread.sleep(1000);
 			doClickCheckBox("Joe Root");
+				Thread.sleep(1000);
+			doClickCheckBox("Jordan Mathews");
 				Thread.sleep(1000);
 			doClickCheckBox("Joe Root");
 				Thread.sleep(1000);	
-			doClickCheckBox("Joe Root");
+			doClickCheckBox("Jordan Mathews");
 			}catch(InterruptedException e) {
 				throw new RuntimeException("Insomniac");
 			}
@@ -52,10 +53,20 @@ public class pracRelativeSelector {
 		
 		WebElement empCheckBox = driver.findElement(with(empNameAdminCheckBox).toLeftOf(empNameAdmin));
 		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(false)", empCheckBox);
+		
 		FluentWait<WebDriver> fluent = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(2));
+		fluent.until(ExpectedConditions.visibilityOf(empCheckBox));
 		fluent.until(ExpectedConditions.elementToBeClickable(empCheckBox));
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		empCheckBox.click();
 	}
 
