@@ -13,7 +13,7 @@ public class Login{
 		
 		d.manage().window().maximize();
 		
-		System.out.println("session init'ed!");
+		System.out.println("session initialized!");
 		
 		d.get(siteName);
 		
