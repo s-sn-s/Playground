@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+//import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,7 +68,7 @@ public class loginPage {
 			driver.findElement(emailBy).sendKeys("TestDemo123@mymail.com");
 			driver.findElement(passBy).sendKeys("TestDemo123@");
 			driver.findElement(loginBy).click();
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
+//			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10),Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.jsReturnsValue("document.readyState==='complete'"));
