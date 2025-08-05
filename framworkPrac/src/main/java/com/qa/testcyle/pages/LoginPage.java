@@ -10,12 +10,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
+import com.qa.testcycle.util.ElementUtil;
+
 public class LoginPage {
 
 	private WebDriver driver;
+	private ElementUtil eleUtil;
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		eleUtil = new ElementUtil(driver);
 	}
 	
 	private By loginName = By.xpath("//input[@data-test='username']");

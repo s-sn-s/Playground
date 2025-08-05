@@ -3,8 +3,11 @@ package com.qa.testcyle.pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
@@ -18,7 +21,7 @@ public class HomePage {
 	private By productTitleBy = By.cssSelector("div.product_label");
 	
 	public String getHomePageBannerText() {
-		
+		System.out.println("Landed on Home page!");
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10),Duration.ofSeconds(2));
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(productTitleBy));
 		
@@ -27,4 +30,21 @@ public class HomePage {
 		return productTitleText;
 	}
 	
+	public ProductDetailPage getProductDetail(String productName) {
+		
+		By productNameBy = By.xpath("//div[text()='"+productName+"']");
+		
+		
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(10))
+				.pollingEvery(Duration.ofSeconds(10))
+				.ignoring(NoSuchElementException.class)
+				.withMessage(productNameBy + " : element not found!");
+		
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(productNameBy));
+		
+		driver.findElement(productNameBy).click();
+		
+		return new ProductDetailPage(driver);
+	}
 }

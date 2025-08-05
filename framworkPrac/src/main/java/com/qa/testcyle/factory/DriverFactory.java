@@ -1,18 +1,27 @@
 package com.qa.testcyle.factory;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import com.qa.testcycle.constants.AppConstants;
 import com.qa.testcyle.exception.InvalidBrowserException;
 
 public class DriverFactory {
 
 	WebDriver driver;
+	Properties prop;
 	
-	public WebDriver getDriver(String browser) {
+	public WebDriver getDriver(Properties prop) {
+		
+		String browser = prop.getProperty("browser");
+		String mySiteURL = prop.getProperty("site");
 		
 		System.out.println(browser.toUpperCase()+" browser is selected!");
 		
@@ -36,8 +45,21 @@ public class DriverFactory {
 		
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.get("https://www.saucedemo.com/v1/index.html");
+		driver.get(mySiteURL);
 		
 		return driver;
-	}	
+	}
+	
+	public Properties intiProperties() {
+		prop = new Properties();
+		try {
+		FileInputStream file = new FileInputStream(AppConstants.CONFIG_FILE_PATH);
+		prop.load(file);
+		
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+		return prop;
+	}
 }
