@@ -19,6 +19,7 @@ public class HomePage {
 	}
 	
 	private By productTitleBy = By.cssSelector("div.product_label");
+	private By productImgBy = By.cssSelector("img.inventory_item_img");
 	
 	public String getHomePageBannerText() {
 		System.out.println("Landed on Home page!");
@@ -46,5 +47,16 @@ public class HomePage {
 		driver.findElement(productNameBy).click();
 		
 		return new ProductDetailPage(driver);
+	}
+	
+	public int getproductCount() {
+		System.out.println("Counting products displayed!");
+		try {
+		Thread.sleep(5000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		int productCount = driver.findElements(productImgBy).size();
+		return productCount;
 	}
 }

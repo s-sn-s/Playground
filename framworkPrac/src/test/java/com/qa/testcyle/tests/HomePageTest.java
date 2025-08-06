@@ -21,4 +21,10 @@ public class HomePageTest extends BaseTest{
 		String actualProductName = productDetailPage.getProductName();
 		Assert.assertEquals(expectedProductName.equals(actualProductName), true);
 	}
+	
+	@Test
+	public void verifyProductDisplayedCount() {
+		int productCount = homePage.getproductCount();
+		Assert.assertEquals(productCount, 6,"Issue in products listed!");
+	}
 }
