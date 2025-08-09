@@ -1,6 +1,8 @@
 package com.qa.opencarttesting.util;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,9 +16,9 @@ import com.qa.opencarttesting.constants.AppConstants;
 
 public class ElementUtil {
 
-	WebDriver driver;
-	FluentWait<WebDriver> wait;
-	WebDriverWait webWait;
+	private WebDriver driver;
+	private FluentWait<WebDriver> wait;
+	private WebDriverWait webWait;
 	
 	public ElementUtil(WebDriver driver) {
 		this.driver = driver;
@@ -70,5 +72,27 @@ public class ElementUtil {
 	public String getCurrentURL() {
 		waitForPageLoad();
 		return driver.getCurrentUrl();
+	}
+	
+	public List<String> getAllLinkTextInsideH2(String h2Text){
+		By h2aTagBy = By.xpath("(//div[@id='content']/h2[text()='"+ h2Text +"']/following-sibling::ul)[1]/li/a");
+		
+		List<WebElement> elements = driver.findElements(h2aTagBy);
+		List<String> aTagTextList = new ArrayList<String>();
+		for(WebElement ele : elements) {
+			aTagTextList.add(ele.getText());
+		}
+		return aTagTextList;
+	}
+	
+	public List<String> getAllLinkInsideH2(String h2Text){
+		By h2aTagBy = By.xpath("(//div[@id='content']/h2[text()='"+ h2Text +"']/following-sibling::ul)[1]/li/a");
+		
+		List<WebElement> elements = driver.findElements(h2aTagBy);
+		List<String> aTagLinkList = new ArrayList<String>();
+		for(WebElement ele : elements) {
+			aTagLinkList.add(ele.getDomAttribute("href"));
+		}
+		return aTagLinkList;
 	}
 }

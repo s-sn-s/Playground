@@ -1,6 +1,7 @@
 package com.qa.opencarttesting.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.DataProvider;
 
 import com.qa.opencarttesting.util.ElementUtil;
 
@@ -18,5 +19,10 @@ public class HomePage {
 		return util.getCurrentURL();
 	}
 	
+	public boolean verifyNumberSubheadsUnderHeading(String HeadingStr, int numberOfSubheads) {
+		int actualNumberOfSubheads = util.getAllLinkTextInsideH2(HeadingStr).size();
+		System.out.println("Comparing actual :" + actualNumberOfSubheads + "\n with expected :" + numberOfSubheads);
+		return actualNumberOfSubheads==numberOfSubheads?true:false;
+	}
 	
 }
