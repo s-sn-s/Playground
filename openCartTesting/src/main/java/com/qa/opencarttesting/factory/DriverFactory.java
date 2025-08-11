@@ -1,5 +1,7 @@
 package com.qa.opencarttesting.factory;
 
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -8,6 +10,8 @@ import com.qa.opencarttesting.excpetion.BrowserInitException;
 public class DriverFactory {
 
 	WebDriver driver;
+	Properties prop;
+	public static ThreadLocal<WebDriver> tldriver = new ThreadLocal<WebDriver>();
 	
 	public WebDriver initDriver(String browser) {
 		
