@@ -23,6 +23,9 @@ public class LoginPage {
 	public HomePage doLogin() {
 		String mail = "TestDemo123@mymail.com";
 		String pass = "TestDemo123@";
+//		mvn clean install -Dname="TestDemo123@mymail.com" -Dpass="TestDemo123@"
+//		String mail = System.getProperty("name");
+//		String pass = System.getProperty("pass");
 		
 		util.waitAndGetElementBy(emailBy, AppConstants.DEFAULT_WAIT_SECONDS).sendKeys(mail);
 		util.getElementUsingBy(passBy).sendKeys(pass);
