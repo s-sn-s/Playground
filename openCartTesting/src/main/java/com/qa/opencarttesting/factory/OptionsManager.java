@@ -9,11 +9,11 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class OptionsManager {
 
 	Properties prop;
-	
+
 	public OptionsManager(Properties prop) {
 		this.prop = prop;
 	}
-	
+
 	public ChromeOptions getChromeOption() {
 		ChromeOptions options = new ChromeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))){
@@ -26,7 +26,7 @@ public class OptionsManager {
 		}
 		return options;
 	}
-	
+
 	public EdgeOptions getEdgeOption() {
 		EdgeOptions options = new EdgeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))){
@@ -37,7 +37,7 @@ public class OptionsManager {
 		}
 		return options;
 	}
-	
+
 	public FirefoxOptions getFireOption() {
 		FirefoxOptions options = new FirefoxOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))){
@@ -50,5 +50,5 @@ public class OptionsManager {
 		}
 		return options;
 	}
-	
+
 }

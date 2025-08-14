@@ -11,9 +11,9 @@ public class LoginPageTest extends BaseTest{
 	@Test
 	public void doLoginTest() {
 		SoftAssert softAssert = new SoftAssert();
-		
+
 		homePage = loginPage.doLogin();
-		
+
 		softAssert.assertEquals(homePage.getHomePageURL(), AppConstants.HOME_PAGE_URL);
 	}
 }

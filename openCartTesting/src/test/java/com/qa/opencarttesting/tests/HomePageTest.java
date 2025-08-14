@@ -13,7 +13,7 @@ public class HomePageTest extends BaseTest{
 	public void setupHomePageTest() {
 		homePage = loginPage.doLogin();
 	}
-	
+
 	@DataProvider
 	public Object[][] subHeadCountArgs(){
 		return new Object[][]{
@@ -24,7 +24,7 @@ public class HomePageTest extends BaseTest{
 			{"xxx",0}
 		};
 	}
-	
+
 	@Test(dataProvider = "subHeadCountArgs")
 	public void verifyNumberOfSubheading(String headStr, int noOfSubheading) {
 		SoftAssert softAssert = new SoftAssert();
