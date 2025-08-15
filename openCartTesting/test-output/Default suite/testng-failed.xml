@@ -5,8 +5,9 @@
     <classes>
       <class name="com.qa.opencarttesting.tests.LoginPageTest">
         <methods>
-          <include name="doLoginTest"/>
+          <include name="takeScreenshot"/>
           <include name="exitTest"/>
+          <include name="doLoginTest"/>
           <include name="initTest"/>
         </methods>
       </class> <!-- com.qa.opencarttesting.tests.LoginPageTest -->

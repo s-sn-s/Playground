@@ -69,7 +69,7 @@ public class DriverFactory {
 		return prop;
 	}
 	
-	public String getScreenshotPath() {
+	public static String getScreenshotPath() {
 		File srcFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE); 
 		String path = System.getProperty("User.dir") + "/screenshot/" + "_" + System.currentTimeMillis() + ".png";
 		File desFile = new File(path);
@@ -81,7 +81,7 @@ public class DriverFactory {
 		return path;
 	}
 	
-	public File getScreenshotFile() {
+	public static File getScreenshotFile() {
 		File srcFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE); 
 		return srcFile;
 	}

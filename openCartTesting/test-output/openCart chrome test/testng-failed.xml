@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="2" parallel="tests" name="Failed suite [openCart chrome test]" guice-stage="DEVELOPMENT" verbose="4">
-  <test thread-count="2" parallel="tests" name="Homepage Test(failed)" verbose="4">
+  <test thread-count="2" parallel="tests" name="Login Test(failed)" verbose="4">
     <classes>
-      <class name="com.qa.opencarttesting.tests.HomePageTest">
+      <class name="com.qa.opencarttesting.tests.LoginPageTest">
         <methods>
+          <include name="takeScreenshot"/>
           <include name="exitTest"/>
-          <include name="verifyNumberOfSubheading" invocation-numbers="0 1 2"/>
-          <include name="setupHomePageTest"/>
+          <include name="doLoginTest"/>
           <include name="initTest"/>
         </methods>
-      </class> <!-- com.qa.opencarttesting.tests.HomePageTest -->
+      </class> <!-- com.qa.opencarttesting.tests.LoginPageTest -->
     </classes>
-  </test> <!-- Homepage Test(failed) -->
+  </test> <!-- Login Test(failed) -->
 </suite> <!-- Failed suite [openCart chrome test] -->
