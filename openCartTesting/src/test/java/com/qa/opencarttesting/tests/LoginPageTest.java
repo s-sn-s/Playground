@@ -23,4 +23,6 @@ public class LoginPageTest extends BaseTest{
 		softAssert.assertTrue(hURL.equals(AppConstants.HOME_PAGE_URL));
 		softAssert.assertAll();
 	}
+	
+	
 }

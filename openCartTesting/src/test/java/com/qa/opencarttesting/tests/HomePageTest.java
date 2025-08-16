@@ -21,7 +21,7 @@ public class HomePageTest extends BaseTest{
 			{"My Orders",6},
 			{"My Affiliate Account",1},
 			{"Newsletter",1},
-			{"xxx",0}
+			{"xxx",1}
 		};
 	}
 
@@ -31,4 +31,6 @@ public class HomePageTest extends BaseTest{
 		softAssert.assertTrue(homePage.verifyNumberSubheadsUnderHeading(headStr, noOfSubheading));
 		softAssert.assertAll();
 	}
+	
+	
 }
