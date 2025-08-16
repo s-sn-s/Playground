@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "jar:file:/Users/savin/.m2/repository/org/testng/testng/7.11.0/testng-7.11.0.jar!/testng-1.0.dtd">
-<suite name="openCart chrome test" verbose="4" parallel="tests" thread-count="2">
-	<test name = "Login Test">
+<suite name="openCart chrome test" verbose="4" parallel="tests"
+	thread-count="2">
+	<test name="Login Test">
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.qa.opencarttesting.tests.LoginPageTest">
 			</class>
 		</classes>
-	</test>	
-	<!-- <test name = "Homepage Test">
+	</test>
+	<test name="Homepage Test">
+		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.qa.opencarttesting.tests.HomePageTest">
 			</class>
 		</classes>
-	</test> -->	
+	</test>
 </suite>

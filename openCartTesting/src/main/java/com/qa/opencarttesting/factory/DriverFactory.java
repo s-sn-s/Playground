@@ -6,7 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -23,11 +24,15 @@ public class DriverFactory {
 	WebDriver driver;
 	Properties prop;
 	OptionsManager Omanager;
+	private static final Logger log = LogManager.getLogger (DriverFactory.class);
 	public static ThreadLocal<WebDriver> tldriver = new ThreadLocal<>();
 
 	public WebDriver initDriver(Properties prop) {
 		Omanager = new OptionsManager(prop);
 		String browser = prop.getProperty("browser");
+		
+		log.info("Select browser : " + browser);
+		
 		switch(browser.trim().toLowerCase()) {
 		case "chrome":
 			tldriver.set(new ChromeDriver(Omanager.getChromeOption()));
@@ -42,6 +47,7 @@ public class DriverFactory {
 			tldriver.set(new SafariDriver());
 			break;
 		default:
+			log.error("Wrong browser is passed : " + browser);
 			throw new BrowserInitException("Wrong browser value passed : " + browser);
 		}
 

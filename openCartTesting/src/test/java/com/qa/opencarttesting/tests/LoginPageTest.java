@@ -16,8 +16,9 @@ public class LoginPageTest extends BaseTest{
 
 		String hURL= homePage.getHomePageURL();
 		
-		System.out.println(hURL);
-		System.out.println(AppConstants.HOME_PAGE_URL);
+		System.out.println("Expected URL " + AppConstants.HOME_PAGE_URL);
+		System.out.print("Actual URL " + hURL);
+		
 		
 		softAssert.assertTrue(hURL.equals(AppConstants.HOME_PAGE_URL));
 		softAssert.assertAll();

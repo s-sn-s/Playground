@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencarttesting.factory.DriverFactory;
@@ -22,10 +23,14 @@ public class BaseTest {
 	protected LoginPage loginPage;
 	protected HomePage homePage;
 
+	@Parameters({"browser"})
 	@BeforeTest
-	public void initTest() {
+	public void initTest(String browser) {
 		DriverFactory driverFactory = new DriverFactory();
 		prop = driverFactory.getProp();
+		if(browser!=null) {
+			prop.setProperty("browser", browser);
+		}
 		driver = driverFactory.initDriver(prop);
 		loginPage = new LoginPage(driver);
 	}
