@@ -3,3 +3,7 @@
 2025-08-15 22:43:53 ERROR DriverFactory:50 - Wrong browser is passed : firefoxo
 2025-08-15 23:12:40 INFO  DriverFactory:34 - Select browser : firefox
 2025-08-15 23:12:40 INFO  DriverFactory:34 - Select browser : chrome
+2025-08-18 01:12:50 INFO  DriverFactory:34 - Select browser : firefox
+2025-08-18 01:12:50 INFO  DriverFactory:34 - Select browser : chrome
+2025-08-18 23:56:46 INFO  DriverFactory:34 - Select browser : firefox
+2025-08-18 23:56:46 INFO  DriverFactory:34 - Select browser : chrome

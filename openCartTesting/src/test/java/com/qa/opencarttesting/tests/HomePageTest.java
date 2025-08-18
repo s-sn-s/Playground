@@ -32,5 +32,10 @@ public class HomePageTest extends BaseTest{
 		softAssert.assertAll();
 	}
 	
-	
+	@Test
+	public void verifyURL() {
+		String homePageUrl = homePage.getHomePageURL();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(homePageUrl, "https://naveenautomationlabs.com/opencart/index.php?route=account/account");
+	}
 }
